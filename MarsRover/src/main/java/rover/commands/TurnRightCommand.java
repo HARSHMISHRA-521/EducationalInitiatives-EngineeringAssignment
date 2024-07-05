@@ -1,4 +1,4 @@
-    package rover.commands;
+package rover.commands;
 
 import rover.Rover;
 
