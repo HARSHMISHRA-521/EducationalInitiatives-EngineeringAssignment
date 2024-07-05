@@ -1,17 +1,22 @@
-package main.java;
+package rover;
 
-import rover.*;
 import java.util.ArrayList;
 import java.util.List;
-
+import rover.commands.Command;
+import rover.commands.MoveCommand;
+import rover.commands.TurnLeftCommand;
+import rover.commands.TurnRightCommand;
 
 public class Main {
+
     public static void main(String[] args) {
-        // Initialize grid, rover, and obstacles
         Grid grid = new Grid(10, 10);
-        Rover rover = new Rover(0, 0, Direction.NORTH, grid, new ArrayList<>());
-        
-        // Example commands
+        List<Obstacle> obstacles = new ArrayList<>();
+        obstacles.add(new Obstacle(2, 2));
+        obstacles.add(new Obstacle(3, 5));
+
+        Rover rover = new Rover(0, 0, Direction.NORTH, grid, obstacles);
+
         List<Command> commands = new ArrayList<>();
         commands.add(new MoveCommand(rover));
         commands.add(new MoveCommand(rover));
@@ -19,13 +24,11 @@ public class Main {
         commands.add(new MoveCommand(rover));
         commands.add(new TurnLeftCommand(rover));
         commands.add(new MoveCommand(rover));
-        
-        // Execute commands
+
         for (Command command : commands) {
             command.execute();
         }
-        
-        // Get final position and status report
+
         System.out.println("Final Position: (" + rover.getX() + ", " + rover.getY() + ", " + rover.getDirection() + ")");
         System.out.println("Status Report: " + rover.getStatusReport());
     }

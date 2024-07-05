@@ -1,16 +1,18 @@
 package rover;
 
 public enum Direction {
-    NORTH,
-    EAST,
-    SOUTH,
-    WEST;
+    NORTH("N"), EAST("E"), SOUTH("S"), WEST("W");
 
-    /**
-     * Get the left direction of the current direction.
-     *
-     * @return Left direction.
-     */
+    private String shortName;
+
+    Direction(String shortName) {
+        this.shortName = shortName;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
     public Direction leftDirection() {
         switch (this) {
             case NORTH:
@@ -22,15 +24,10 @@ public enum Direction {
             case WEST:
                 return SOUTH;
             default:
-                throw new IllegalStateException("Unexpected value: " + this);
+                throw new IllegalArgumentException("Invalid direction");
         }
     }
 
-    /**
-     * Get the right direction of the current direction.
-     *
-     * @return Right direction.
-     */
     public Direction rightDirection() {
         switch (this) {
             case NORTH:
@@ -42,7 +39,12 @@ public enum Direction {
             case WEST:
                 return NORTH;
             default:
-                throw new IllegalStateException("Unexpected value: " + this);
+                throw new IllegalArgumentException("Invalid direction");
         }
+    }
+
+    @Override
+    public String toString() {
+        return shortName;
     }
 }
