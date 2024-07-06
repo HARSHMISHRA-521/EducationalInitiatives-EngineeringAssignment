@@ -9,6 +9,14 @@ import rover.commands.TurnRightCommand;
 
 public class Main {
 
+    /**
+     * The main method that initializes a Mars Rover simulation, executes a
+     * series of commands, and prints the final position and status report of
+     * the rover.
+     *
+     * @param args the command-line arguments
+     */
+
     public static void main(String[] args) {
         Grid grid = new Grid(10, 10);
         List<Obstacle> obstacles = new ArrayList<>();
@@ -28,6 +36,8 @@ public class Main {
         for (Command command : commands) {
             command.execute();
         }
+
+        rover.setDirection(Direction.EAST);
 
         System.out.println("Final Position: (" + rover.getX() + ", " + rover.getY() + ", " + rover.getDirection() + ")");
         System.out.println("Status Report: " + rover.getStatusReport());

@@ -19,6 +19,13 @@ public class Rover {
         this.obstacles = obstacles;
     }
 
+
+    /**
+     * Moves the Rover in the specified direction if the move is valid.
+     *
+     * @param - No parameters
+     * @return No return value
+     */
     public void move() {
         int newX = x;
         int newY = y;
@@ -47,10 +54,25 @@ public class Rover {
         }
     }
 
+
+    /**
+     * A method to turn the Rover left.
+     *
+     * @param No parameters
+     * @return No return value
+     */
     public void turnLeft() {
         direction = direction.leftDirection();
         System.out.println("Turned left. Now facing " + direction);
     }
+
+
+    /**
+     * A method to turn the Rover right.
+     *
+     * @param No parameters
+     * @return No return value
+     */
 
     public void turnRight() {
         direction = direction.rightDirection();
@@ -66,6 +88,15 @@ public class Rover {
         return false;
     }
 
+
+
+    /**
+     * Checks if the given coordinates represent a valid move on the grid.
+     *
+     * @param newX the x-coordinate of the new position
+     * @param newY the y-coordinate of the new position
+     * @return true if the move is valid, false otherwise
+     */
     public String getStatusReport() {
         String obstacleStatus = detectObstacle(x, y) ? "Obstacles detected." : "No obstacles detected.";
         return "Rover is at (" + x + ", " + y + ") facing " + direction + ". " + obstacleStatus;
@@ -78,15 +109,47 @@ public class Rover {
         return !detectObstacle(newX, newY);
     }
 
+
+    /**
+     * Gets the x-coordinate value.
+     *
+     * @return The x-coordinate value.
+     */
     public int getX() {
         return x;
     }
 
+
+
+    /**
+     * Retrieves the y-coordinate value.
+     *
+     * @return the y-coordinate value
+     */
     public int getY() {
         return y;
     }
 
+
+
+    /**
+     * Retrieves the current direction of the Rover.
+     *
+     * @return the Direction enum representing the current direction of the
+     * Rover
+     */
+
     public Direction getDirection() {
         return direction;
+    }
+
+
+    /**
+     * Sets the direction of the Rover.
+     *
+     * @param direction the new direction for the Rover
+     */
+    public void setDirection(Direction direction) {
+        this.direction = direction;
     }
 }

@@ -9,9 +9,23 @@ public enum Direction {
         this.shortName = shortName;
     }
 
+    /**
+     * Returns the short name of the Direction.
+     *
+     * @return the short name of the Direction
+     */
+
     public String getShortName() {
         return shortName;
     }
+
+
+
+    /**
+     * A method to calculate the direction when turning left.
+     *
+     * @return the new direction after turning left
+     */
 
     public Direction leftDirection() {
         switch (this) {
@@ -28,6 +42,17 @@ public enum Direction {
         }
     }
 
+
+
+    /**
+     * Returns the direction that is one step to the right of the current
+     * direction.
+     *
+     * @return the direction that is one step to the right of the current
+     * direction.
+     * @throws IllegalArgumentException if the current direction is invalid.
+     */
+
     public Direction rightDirection() {
         switch (this) {
             case NORTH:
@@ -43,6 +68,12 @@ public enum Direction {
         }
     }
 
+
+    /**
+     * A description of the toString function.
+     *
+     * @return description of the returned string.
+     */
     @Override
     public String toString() {
         return shortName;
