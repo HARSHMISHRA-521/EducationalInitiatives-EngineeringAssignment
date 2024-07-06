@@ -1,7 +1,13 @@
 package test.java.rover;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.*;
+
+import rover.Direction;
+import rover.Grid;
+import rover.Obstacle;
+import rover.Rover;
+
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;

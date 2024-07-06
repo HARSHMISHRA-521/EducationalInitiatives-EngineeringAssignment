@@ -1,12 +1,15 @@
 package rover;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;    
 
 public class Rover {
 
     private int x;
     private int y;
     private Direction direction;
+    private static final Logger logger = Logger.getLogger(Rover.class.getName());
 
     private Grid grid;
     private List<Obstacle> obstacles;
@@ -48,9 +51,9 @@ public class Rover {
         if (isValidMove(newX, newY)) {
             x = newX;
             y = newY;
-            System.out.println("Moved to (" + x + ", " + y + ")");
+            logger.log(Level.INFO, "Moved to ({0}, {1})", new Object[]{x, y});
         } else {
-            System.out.println("Obstacle detected or out of grid boundary. Cannot move.");
+            logger.log(Level.WARNING, "Obstacle detected or out of grid boundary. Cannot move.");
         }
     }
 
@@ -63,7 +66,7 @@ public class Rover {
      */
     public void turnLeft() {
         direction = direction.leftDirection();
-        System.out.println("Turned left. Now facing " + direction);
+        logger.log(Level.INFO, "Turned left. Now facing {0}", direction);
     }
 
 
@@ -76,7 +79,7 @@ public class Rover {
 
     public void turnRight() {
         direction = direction.rightDirection();
-        System.out.println("Turned right. Now facing " + direction);
+        logger.log(Level.INFO, "Turned right. Now facing {0}", direction);
     }
 
     public boolean detectObstacle(int x, int y) {

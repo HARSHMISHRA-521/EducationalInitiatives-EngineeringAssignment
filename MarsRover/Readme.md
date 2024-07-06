@@ -17,6 +17,7 @@
 7. [Inputs and Outputs](#inputs-and-outputs)
 8. [Evaluation Criteria](#evaluation-criteria)
 9. [Code Walkthrough](#code-walkthrough)
+10. [Test Cases](#Test-Cases)
 
 ---
 
@@ -122,6 +123,9 @@ To demonstrate proficiency in Java programming, design patterns (Command and Com
 
 ---
 
+- **OUTPUT GENERATED**:                 
+   ![alt text](output.png)
+
 ## Evaluation Criteria
 
 ### Criteria for assessing code quality, functionality, and standards
@@ -141,6 +145,10 @@ To demonstrate proficiency in Java programming, design patterns (Command and Com
 - See the respective sections above for detailed explanations on each aspect of the project.
 
 ---
+
+## Test Cases
+![alt text](test-coverage.png)
+
 
 ## Conclusion
 
