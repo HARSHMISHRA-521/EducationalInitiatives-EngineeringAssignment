@@ -18,7 +18,6 @@ public class CareTaker {
         mementoList.add(state);
     }
 
-
     /**
      * Retrieves the Memento object at the specified index from the mementoList.
      *
